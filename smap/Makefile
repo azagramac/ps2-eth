@@ -1,0 +1,29 @@
+#  _____     ___ ____
+#   ____|   |    ____|      PSX2 OpenSource Project
+#  |     ___|   |____       (C)2002, David Ryan ( Oobles@hotmail.com )
+#                           (C)2003, adresd     ( adresd_ps2dev@yahoo.com )
+#  ------------------------------------------------------------------------
+
+IOP_SRC_DIR = ./
+IOP_BIN = ps2smap.irx
+IOP_OBJS = main.o smap.o xfer.o imports.o
+
+LWIP_DHCP=1
+
+IOP_INCS += -I$(PS2SDK)/iop/include
+IOP_CFLAGS += -Wall -fno-builtin -D_IOP
+IOP_PREFER_GPOPT = 8192
+IOP_LDFLAGS += -s
+
+ifdef LWIP_DHCP
+IOP_CFLAGS  += -DLWIP_DHCP=1
+endif
+
+all: $(IOP_BIN)
+
+clean:
+	rm -r -f $(IOP_BIN) $(IOP_OBJS) $(IOP_OBJS_DIR)
+
+include $(PS2SDK)/Defs.make
+include $(PS2SDK)/samples/Makefile.pref
+include $(PS2SDK)/samples/Makefile.iopglobal
