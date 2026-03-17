@@ -1,4 +1,5 @@
-# PS2ETH
+<img width="480" alt="logo-ps2" src="https://github.com/user-attachments/assets/4d5c88e5-5e13-4d17-8cfc-69d36d362075" />
+
 
 This project is dedicated to developing **PlayStation 2 Ethernet drivers**.  
 Each driver may be covered by a different software license. Please check the license of the driver before using it.
